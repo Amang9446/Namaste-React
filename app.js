@@ -1,50 +1,54 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// React elemet
-// const TitleHeading = () => <h1 id="high">I am JSX Heading</h1>;
-// const HeadingComponent = () => (
-//   <div id="container">
-//     <h1>{aman}</h1>
-//     <TitleHeading />
-//     <h1 id="jsx">I am from the functional component</h1>
-//   </div>
-// );
-// const aman = "amkjbjhdsvbhjdsbfhdsbfdsbfdshasdhan";
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<HeadingComponent />);
-
-
-// Assignment 1
-
-// const element = (
-//     <div className="element">
-//         <h1>I am from element h1</h1>
-//         <h2>I am from element h2</h2>
-//         <h3>I am from element h3</h3>
-//     </div>
-// )
-// const heading1 = 'h1 from function';
-// const heading2 = 'h2 from function';
-// const heading3 = 'h3 from function';
-// const Heading = () => (
-//     <div className="title">
-//         {element}
-//         <h1>I am {heading1}</h1>
-//         <h2>I am {heading2}</h2>
-//         <h3>I am {heading3}</h3>
-//     </div>
-// )
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<Heading></Heading>)
-
-const HeadingComponent = () => (
-    <div className="header">
-        <img className="brand" src="https://cryptologos.cc/logos/anyswap-any-logo.png" alt="logo.png"></img>
-        <input type="seach" placeholder="search.."></input>
-        <button type="submit">Submit</button>
-        <img className="user" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLY4aT6JxU4kE9F6X8YQ30MGiFd89dh10Wj5ozmejxYA&s" alt="user.logo"></img>
+const Header = () => (
+  <div className="header">
+    <div className="logo-container">
+      <img
+        className="logo"
+        src="https://penji.co/wp-content/uploads/2022/08/10.-mr.-d-food-logo.jpg"
+        alt="logo"
+      />
     </div>
-)
+    <div className="nav-items">
+      <ul>
+        <li>Home</li>
+        <li>Cart</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+        <li>SignUp</li>
+      </ul>
+    </div>
+  </div>
+);
+
+const RestaurantCard = () => (
+<div className="res-card">
+    <img className="res-logo" src='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/p4fn2esrcxfeeefllnjz' alt='res-img'/>
+    <h3>Sai Plaza</h3>
+    <h4>Briyani, North Indian</h4>
+    <h4>4.4 stars</h4>
+    <h4>22 mins</h4>
+</div>
+);
+
+const Body = () => (
+  <div className="body">
+    <div className="search">Search</div>
+    <div className="res-container">
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+      <RestaurantCard />
+    </div>
+  </div>
+);
+
+const AppLayout = () => (
+  <div className="app">
+    <Header />
+    <Body />
+  </div>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>)
+root.render(<AppLayout />);
