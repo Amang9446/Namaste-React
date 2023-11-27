@@ -1842,14 +1842,15 @@ const resturantsList = [
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+  const {name, cuisines, costForTwo, avgRating, deliveryTime} = resData?.data;
   return (
     <div className="res-card">
       <img className="res-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/" +resData.data.cloudinaryImageId} alt="res-img" />
-      <h3>{resData.data.name}</h3>
-      <h4>{resData.data.cuisines.join(", ")}</h4> 
-      <h4>₹{resData.data.costForTwo/100} for two</h4>
-      <h4>{resData.data.avgRating} stars</h4>
-      <h4>{resData.data.deliveryTime} mins</h4>
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4> 
+      <h4>₹{costForTwo/100} for two</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{deliveryTime} mins</h4>
 
     </div>
   );
