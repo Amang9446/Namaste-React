@@ -23,7 +23,6 @@
 
 .res-container {
     display: flex;
-    /* justify-content: space-around; */
     flex-wrap: wrap;
 }
 
@@ -52,4 +51,9 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
+}
+
+.filter-btn {
+    margin: 10px;
+    cursor: pointer;
 }
