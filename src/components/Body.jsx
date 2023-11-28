@@ -1,6 +1,5 @@
 import { resturantsList } from '../utils/static';
 import RestaurantCard from './RestaurantCard';
-resturantsList
 
 const Body = () => (
     <div className="body">
