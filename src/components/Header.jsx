@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btnNameReact, setbtnNameReact] = useState("login");
-  const [userAdminBtn, setuserAdminBtn] = useState("I am user");
   return (
     <div className="header">
       <div className="logo-container">
@@ -16,17 +15,6 @@ const Header = () => {
           <li><Link to="/about">About Us</Link></li>
           <li><Link to="/contact-us">Contact Us</Link></li>
           <li><Link to="/cart">Cart</Link></li>
-          {/* <li>SignUp</li> */}
-          {/* <button
-            className="user-btn"
-            onClick={() => {
-              userAdminBtn === "I am user"
-                ? setuserAdminBtn("I am Admin")
-                : setuserAdminBtn("I am user");
-            }}
-          >
-            {userAdminBtn}
-          </button> */}
           <button
             className="login-btn"
             onClick={() => {
