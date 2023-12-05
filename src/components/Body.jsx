@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofResturants, setlistofResturants] = useState([]);
@@ -22,7 +23,7 @@ const Body = () => {
     }
   };
 
-  return (
+  return listofResturants.length === 0 ? <Shimmer/> :(
     <div className="body">
       <div className="filter">
         <button
