@@ -58,6 +58,10 @@
     cursor: pointer;
 }
 
+.filter {
+    display: flex;
+}
+
 .login-btn {
     padding: 20px;
     cursor: pointer;
