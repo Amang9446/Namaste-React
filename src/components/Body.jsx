@@ -9,7 +9,7 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
-//  console.log("Re-Rendered");
+  //  console.log("Re-Rendered");
   const fetchData = async () => {
     try {
       const data = await fetch(
@@ -33,17 +33,18 @@ const Body = () => {
     <div className="body">
       <div className="filter">
         <div className="search">
-          <input type="text"
-           className="search-box"
+          <input
+            type="text"
+            className="search-box"
             value={searchText}
-            onChange={(e)=>{
+            onChange={(e) => {
               setsearchText(e.target.value);
             }}
-            />
+          />
           <button
             onClick={() => {
               console.log(searchText);
-              const searchedFilters = listofResturants.filter((res)=>
+              const searchedFilters = listofResturants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
               setFilteredRestaurants(searchedFilters);

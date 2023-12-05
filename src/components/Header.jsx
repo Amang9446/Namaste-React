@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   const [btnNameReact, setbtnNameReact] = useState("login");
-  const [userAdminBtn, setuserAdminBtn] = useState("I am user")
+  const [userAdminBtn, setuserAdminBtn] = useState("I am user");
   return (
     <div className="header">
       <div className="logo-container">
@@ -10,20 +12,21 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>Cart</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>SignUp</li>
-          <button className="user-btn"
-          onClick={()=>{
-            userAdminBtn === "I am user"
-            ? setuserAdminBtn("I am Admin")
-            : setuserAdminBtn("I am user")
-          }}
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About Us</Link></li>
+          <li><Link to="/contact-us">Contact Us</Link></li>
+          <li><Link to="/cart">Cart</Link></li>
+          {/* <li>SignUp</li> */}
+          {/* <button
+            className="user-btn"
+            onClick={() => {
+              userAdminBtn === "I am user"
+                ? setuserAdminBtn("I am Admin")
+                : setuserAdminBtn("I am user");
+            }}
           >
             {userAdminBtn}
-          </button>
+          </button> */}
           <button
             className="login-btn"
             onClick={() => {
