@@ -20,15 +20,18 @@ const RestaurantMenu = () => {
   if (restInfo === null) return <Shimmer />;
 
   const { name, cuisines, costForTwoMessage } = restInfo?.cards[0]?.card?.card?.info;
-  const { price } = restInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card.itemCards[0].card;
-
+  const { itemCards } = restInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card;
+console.log(itemCards);
   return (
     <div>
       <h1>{name}</h1>
       <p>{cuisines.join(", ")} - {costForTwoMessage}</p>
       <h3>
-        <li>Biryani</li>
-        <li>Paratha</li>
+      <ul>
+        {itemCards.map((item)=>(
+          <li>{item.card.info.name}</li>
+        ))}
+      </ul>
       </h3>
     </div>
   );
