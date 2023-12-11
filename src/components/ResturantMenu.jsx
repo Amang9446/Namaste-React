@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { RESTURANT_DETAIL_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
   const [restInfo, setRestInfo] = useState(null);
@@ -10,7 +11,7 @@ const RestaurantMenu = () => {
 
   const fecthRest = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D30.7008554%26lng%3D76.6788091%26restaurantId%3D81041%26catalog_qa%3Dundefined%26submitAction%3DE"
+      RESTURANT_DETAIL_URL
     );
     const json = await data.json();
     console.log(json);
